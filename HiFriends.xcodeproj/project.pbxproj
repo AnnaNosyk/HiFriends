@@ -9,21 +9,39 @@
 /* Begin PBXBuildFile section */
 		17A47802284FA1640036473F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17A47801284FA1640036473F /* AppDelegate.swift */; };
 		17A47804284FA1640036473F /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17A47803284FA1640036473F /* SceneDelegate.swift */; };
-		17A47806284FA1640036473F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17A47805284FA1640036473F /* ViewController.swift */; };
-		17A47809284FA1640036473F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 17A47807284FA1640036473F /* Main.storyboard */; };
+		17A47806284FA1640036473F /* AuthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17A47805284FA1640036473F /* AuthViewController.swift */; };
 		17A4780B284FA1640036473F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 17A4780A284FA1640036473F /* Assets.xcassets */; };
 		17A4780E284FA1640036473F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 17A4780C284FA1640036473F /* LaunchScreen.storyboard */; };
+		17A478172850CD9B0036473F /* UIButton+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17A478162850CD9B0036473F /* UIButton+Extension.swift */; };
+		17A478192850D5FB0036473F /* UIFont+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17A478182850D5FB0036473F /* UIFont+Extension.swift */; };
+		17A4781C2850D7040036473F /* UIColor+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17A4781B2850D7040036473F /* UIColor+Extension.swift */; };
+		17A4781E2850E4FF0036473F /* UILabel+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17A4781D2850E4FF0036473F /* UILabel+Extension.swift */; };
+		17A478202850E7520036473F /* UIImageView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17A4781F2850E7520036473F /* UIImageView+Extension.swift */; };
+		17A4782A2850F0E70036473F /* ButtonFormView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17A478292850F0E70036473F /* ButtonFormView.swift */; };
+		17EA906F28515EC3003B0B48 /* UIStackView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17EA906E28515EC3003B0B48 /* UIStackView+Extension.swift */; };
+		17EA907328522FA0003B0B48 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17EA907228522FA0003B0B48 /* SignUpViewController.swift */; };
+		17EA9078285235BF003B0B48 /* OneLineTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17EA9077285235BF003B0B48 /* OneLineTextField.swift */; };
+		17EA907A28528A25003B0B48 /* LogInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17EA907928528A25003B0B48 /* LogInViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		17A477FE284FA1640036473F /* HiFriends.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HiFriends.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		17A47801284FA1640036473F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		17A47803284FA1640036473F /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		17A47805284FA1640036473F /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		17A47808284FA1640036473F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		17A47805284FA1640036473F /* AuthViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthViewController.swift; sourceTree = "<group>"; };
 		17A4780A284FA1640036473F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		17A4780D284FA1640036473F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		17A4780F284FA1640036473F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		17A478162850CD9B0036473F /* UIButton+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton+Extension.swift"; sourceTree = "<group>"; };
+		17A478182850D5FB0036473F /* UIFont+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIFont+Extension.swift"; sourceTree = "<group>"; };
+		17A4781B2850D7040036473F /* UIColor+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extension.swift"; sourceTree = "<group>"; };
+		17A4781D2850E4FF0036473F /* UILabel+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UILabel+Extension.swift"; sourceTree = "<group>"; };
+		17A4781F2850E7520036473F /* UIImageView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+Extension.swift"; sourceTree = "<group>"; };
+		17A478292850F0E70036473F /* ButtonFormView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonFormView.swift; sourceTree = "<group>"; };
+		17EA906E28515EC3003B0B48 /* UIStackView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIStackView+Extension.swift"; sourceTree = "<group>"; };
+		17EA907228522FA0003B0B48 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
+		17EA9077285235BF003B0B48 /* OneLineTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OneLineTextField.swift; sourceTree = "<group>"; };
+		17EA907928528A25003B0B48 /* LogInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogInViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,13 +76,38 @@
 			children = (
 				17A47801284FA1640036473F /* AppDelegate.swift */,
 				17A47803284FA1640036473F /* SceneDelegate.swift */,
-				17A47805284FA1640036473F /* ViewController.swift */,
-				17A47807284FA1640036473F /* Main.storyboard */,
+				17A47805284FA1640036473F /* AuthViewController.swift */,
+				17EA907228522FA0003B0B48 /* SignUpViewController.swift */,
+				17EA907928528A25003B0B48 /* LogInViewController.swift */,
+				17A4781A2850D6E60036473F /* Extensions */,
 				17A4780A284FA1640036473F /* Assets.xcassets */,
 				17A4780C284FA1640036473F /* LaunchScreen.storyboard */,
 				17A4780F284FA1640036473F /* Info.plist */,
 			);
 			path = HiFriends;
+			sourceTree = "<group>";
+		};
+		17A4781A2850D6E60036473F /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				17A478292850F0E70036473F /* ButtonFormView.swift */,
+				17EA9077285235BF003B0B48 /* OneLineTextField.swift */,
+				17EA90742852351B003B0B48 /* UIKit */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		17EA90742852351B003B0B48 /* UIKit */ = {
+			isa = PBXGroup;
+			children = (
+				17A478162850CD9B0036473F /* UIButton+Extension.swift */,
+				17A478182850D5FB0036473F /* UIFont+Extension.swift */,
+				17A4781B2850D7040036473F /* UIColor+Extension.swift */,
+				17A4781D2850E4FF0036473F /* UILabel+Extension.swift */,
+				17A4781F2850E7520036473F /* UIImageView+Extension.swift */,
+				17EA906E28515EC3003B0B48 /* UIStackView+Extension.swift */,
+			);
+			path = UIKit;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -127,7 +170,6 @@
 			files = (
 				17A4780E284FA1640036473F /* LaunchScreen.storyboard in Resources */,
 				17A4780B284FA1640036473F /* Assets.xcassets in Resources */,
-				17A47809284FA1640036473F /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -138,8 +180,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				17A47806284FA1640036473F /* ViewController.swift in Sources */,
+				17EA9078285235BF003B0B48 /* OneLineTextField.swift in Sources */,
+				17EA907328522FA0003B0B48 /* SignUpViewController.swift in Sources */,
+				17A47806284FA1640036473F /* AuthViewController.swift in Sources */,
+				17A478172850CD9B0036473F /* UIButton+Extension.swift in Sources */,
+				17A478202850E7520036473F /* UIImageView+Extension.swift in Sources */,
+				17EA906F28515EC3003B0B48 /* UIStackView+Extension.swift in Sources */,
+				17EA907A28528A25003B0B48 /* LogInViewController.swift in Sources */,
+				17A4782A2850F0E70036473F /* ButtonFormView.swift in Sources */,
 				17A47802284FA1640036473F /* AppDelegate.swift in Sources */,
+				17A4781E2850E4FF0036473F /* UILabel+Extension.swift in Sources */,
+				17A4781C2850D7040036473F /* UIColor+Extension.swift in Sources */,
+				17A478192850D5FB0036473F /* UIFont+Extension.swift in Sources */,
 				17A47804284FA1640036473F /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -147,14 +199,6 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		17A47807284FA1640036473F /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				17A47808284FA1640036473F /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		17A4780C284FA1640036473F /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -294,7 +338,6 @@
 				INFOPLIST_FILE = HiFriends/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -322,7 +365,6 @@
 				INFOPLIST_FILE = HiFriends/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
