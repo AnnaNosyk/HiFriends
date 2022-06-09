@@ -13,7 +13,8 @@ class SignUpViewController: UIViewController {
     let emailLabel = UILabel(title: "Email", textColor: .black, font: .helvetica18())
     let passwordLabel = UILabel(title: "Password", textColor: .black, font: .helvetica18())
     let confirmPasswordLabel = UILabel(title: "Confirm password", textColor: .black, font: .helvetica18())
-    let withUs = UILabel(title: "Already with us?", textColor: .black, font: .helvetica18())
+    let withUsLabel = UILabel(title: "Already with us?", textColor: .black, font: .helvetica18())
+    
     let signUPButton = UIButton(title: "Sign Up", titleColor: .white, backgroundColor: .backGroundButton(), cornerRadius: 10)
     let loginButton = UIButton(title: "Login", titleColor: .redButton(), backgroundColor: .white, cornerRadius: 0)
     
@@ -43,16 +44,16 @@ extension SignUpViewController {
         let stackView = UIStackView(arrangedSubviews: [emailStackView, passwordStackView, confirmPasswordStackView, signUPButton], axis: .vertical, spasing: 40)
         
         loginButton.contentHorizontalAlignment = .leading
-        let bottomStachView = UIStackView(arrangedSubviews: [withUs, loginButton], axis: .horizontal, spasing: 10)
-        bottomStachView.alignment = .firstBaseline
+        let bottomStackView = UIStackView(arrangedSubviews: [withUsLabel, loginButton], axis: .horizontal, spasing: 10)
+        bottomStackView.alignment = .firstBaseline
         
         welcomeLabel.translatesAutoresizingMaskIntoConstraints = false
         stackView.translatesAutoresizingMaskIntoConstraints = false
-        bottomStachView.translatesAutoresizingMaskIntoConstraints = false
+        bottomStackView.translatesAutoresizingMaskIntoConstraints = false
         
         view.addSubview(welcomeLabel)
         view.addSubview(stackView)
-        view.addSubview(bottomStachView)
+        view.addSubview(bottomStackView)
         
         NSLayoutConstraint.activate([
             welcomeLabel.topAnchor.constraint(equalTo: view.topAnchor, constant: 160),
@@ -65,9 +66,9 @@ extension SignUpViewController {
             stackView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -40)
         ])
         NSLayoutConstraint.activate([
-            bottomStachView.topAnchor.constraint(equalTo: stackView.bottomAnchor, constant: 60),
-            bottomStachView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 40),
-            bottomStachView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -40)
+            bottomStackView.topAnchor.constraint(equalTo: stackView.bottomAnchor, constant: 60),
+            bottomStackView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 40),
+            bottomStackView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -40)
         ])
         
         
