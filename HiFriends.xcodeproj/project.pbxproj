@@ -22,6 +22,7 @@
 		17EA907328522FA0003B0B48 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17EA907228522FA0003B0B48 /* SignUpViewController.swift */; };
 		17EA9078285235BF003B0B48 /* OneLineTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17EA9077285235BF003B0B48 /* OneLineTextField.swift */; };
 		17EA907A28528A25003B0B48 /* LogInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17EA907928528A25003B0B48 /* LogInViewController.swift */; };
+		17EA907C2852B14C003B0B48 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17EA907B2852B14C003B0B48 /* Constants.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -42,6 +43,7 @@
 		17EA907228522FA0003B0B48 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		17EA9077285235BF003B0B48 /* OneLineTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OneLineTextField.swift; sourceTree = "<group>"; };
 		17EA907928528A25003B0B48 /* LogInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogInViewController.swift; sourceTree = "<group>"; };
+		17EA907B2852B14C003B0B48 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,6 +81,7 @@
 				17A47805284FA1640036473F /* AuthViewController.swift */,
 				17EA907228522FA0003B0B48 /* SignUpViewController.swift */,
 				17EA907928528A25003B0B48 /* LogInViewController.swift */,
+				17EA907B2852B14C003B0B48 /* Constants.swift */,
 				17A4781A2850D6E60036473F /* Extensions */,
 				17A4780A284FA1640036473F /* Assets.xcassets */,
 				17A4780C284FA1640036473F /* LaunchScreen.storyboard */,
@@ -191,6 +194,7 @@
 				17A47802284FA1640036473F /* AppDelegate.swift in Sources */,
 				17A4781E2850E4FF0036473F /* UILabel+Extension.swift in Sources */,
 				17A4781C2850D7040036473F /* UIColor+Extension.swift in Sources */,
+				17EA907C2852B14C003B0B48 /* Constants.swift in Sources */,
 				17A478192850D5FB0036473F /* UIFont+Extension.swift in Sources */,
 				17A47804284FA1640036473F /* SceneDelegate.swift in Sources */,
 			);

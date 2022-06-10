@@ -9,31 +9,29 @@ import UIKit
 
 class LogInViewController: UIViewController {
     
-    let welcomeBackLabel = UILabel(title: "Welcome back!", textColor: .black, font: .helvetica26())
-    let loginWithabel = UILabel(title: "Login with", textColor: .black, font: .helvetica18())
-    let orLabel = UILabel(title: "or", textColor: .black, font: .helvetica18())
-    let emailLabel = UILabel(title: "Email", textColor: .black, font: .helvetica18())
-    let passwordLabel = UILabel(title: "Password", textColor: .black, font: .helvetica18())
-    let needLabel = UILabel(title: "Need an account?", textColor: .black, font: .helvetica18())
+    let welcomeBackLabel = UILabel(title: Constants().welcomeBackStr, textColor: .black, font: .helvetica26())
+    let loginWithabel = UILabel(title: Constants().loginWithStr, textColor: .black, font: .helvetica18())
+    let orLabel = UILabel(title: Constants().orStr, textColor: .black, font: .helvetica18())
+    let emailLabel = UILabel(title: Constants().emailStr, textColor: .black, font: .helvetica18())
+    let passwordLabel = UILabel(title: Constants().passwordStr, textColor: .black, font: .helvetica18())
+    let needLabel = UILabel(title: Constants().needAnAccountStr, textColor: .black, font: .helvetica18())
     
-    let googleButton = UIButton(title: "Google", titleColor: .black, backgroundColor: .white, isShadow: true)
+    let googleButton = UIButton(title: Constants().googleStr, titleColor: .black, backgroundColor: .white, isShadow: true)
     
     let emailTextField = OneLineTextField(font: .helvetica20())
     let passwordTextField = OneLineTextField(font: .helvetica20())
     
-    let loginButton = UIButton(title: "Login", titleColor: .white, backgroundColor: .backGroundButton())
+    let loginButton = UIButton(title: Constants().loginStr, titleColor: .white, backgroundColor: .backGroundButton())
     
-    let signInButton = UIButton(title: "Sign up", titleColor: .redButton(), backgroundColor: .white, cornerRadius: 0)
+    let signInButton = UIButton(title: Constants().signUpStr, titleColor: .redButton(), backgroundColor: .white, cornerRadius: 0)
 
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .white
-      setupConstraints()
-        
+        setupConstraints()
     }
-
 }
-
 
 //MARK: - Constraints setup
 extension LogInViewController {

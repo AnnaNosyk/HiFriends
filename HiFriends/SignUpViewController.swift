@@ -9,14 +9,14 @@ import UIKit
 
 class SignUpViewController: UIViewController {
     
-    let welcomeLabel = UILabel(title: "Welcome!", textColor: .black, font: .helvetica26())
-    let emailLabel = UILabel(title: "Email", textColor: .black, font: .helvetica18())
-    let passwordLabel = UILabel(title: "Password", textColor: .black, font: .helvetica18())
-    let confirmPasswordLabel = UILabel(title: "Confirm password", textColor: .black, font: .helvetica18())
-    let withUsLabel = UILabel(title: "Already with us?", textColor: .black, font: .helvetica18())
+    let welcomeLabel = UILabel(title: Constants().welcomeStr, textColor: .black, font: .helvetica26())
+    let emailLabel = UILabel(title: Constants().emailStr, textColor: .black, font: .helvetica18())
+    let passwordLabel = UILabel(title: Constants().passwordStr, textColor: .black, font: .helvetica18())
+    let confirmPasswordLabel = UILabel(title: Constants().confirmPassword, textColor: .black, font: .helvetica18())
+    let withUsLabel = UILabel(title: Constants().alreadyWithUsStr, textColor: .black, font: .helvetica18())
     
-    let signUPButton = UIButton(title: "Sign Up", titleColor: .white, backgroundColor: .backGroundButton(), cornerRadius: 10)
-    let loginButton = UIButton(title: "Login", titleColor: .redButton(), backgroundColor: .white, cornerRadius: 0)
+    let signUPButton = UIButton(title: Constants().signUpStr, titleColor: .white, backgroundColor: .backGroundButton(), cornerRadius: 10)
+    let loginButton = UIButton(title: Constants(    ).loginStr, titleColor: .redButton(), backgroundColor: .white, cornerRadius: 0)
     
     let emailTextField = OneLineTextField(font: .helvetica20())
     let passwordTextField = OneLineTextField(font: .helvetica20())

@@ -8,16 +8,17 @@
 import UIKit
 
 class AuthViewController: UIViewController {
-
-    let emailButton = UIButton(title: "Email", titleColor: .white, backgroundColor:.backGroundButton() )
     
-    let loginButton = UIButton(title: "Login", titleColor: .redButton(), backgroundColor: .white, isShadow: true)
     
-    let googleButton = UIButton(title: "Google", titleColor: .black, backgroundColor: .white, isShadow: true)
+    let emailButton = UIButton(title: Constants().emailStr , titleColor: .white, backgroundColor:.backGroundButton() )
     
-    let emailLabel = UILabel(title: "Sign up with", textColor: .black, font: .helvetica18())
-    let googleLabel = UILabel(title: "Get startet with", textColor: .black, font: .helvetica18())
-    let withUsLabel = UILabel(title: "Already with us?", textColor: .black, font: .helvetica18())
+    let loginButton = UIButton(title: Constants().loginStr, titleColor: .redButton(), backgroundColor: .white, isShadow: true)
+    
+    let googleButton = UIButton(title: Constants().googleStr, titleColor: .black, backgroundColor: .white, isShadow: true)
+    
+    let emailLabel = UILabel(title: Constants().signUpWithStr, textColor: .black, font: .helvetica18())
+    let googleLabel = UILabel(title: Constants().getStartetWithStr, textColor: .black, font: .helvetica18())
+    let withUsLabel = UILabel(title: Constants().alreadyWithUsStr, textColor: .black, font: .helvetica18())
     
     let logoImage = UIImageView(image: UIImage(named: "darkMode"), contentMode: .scaleAspectFill)
     
