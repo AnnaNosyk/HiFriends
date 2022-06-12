@@ -8,8 +8,8 @@
 import Foundation
 
 class Constants {
-    let emailStr = "Email..."
-    let googleStr =  "Google..."
+    let emailStr = "Email"
+    let googleStr =  "Google"
     let loginStr = "Login"
     let signUpWithStr = "Sign up with"
     

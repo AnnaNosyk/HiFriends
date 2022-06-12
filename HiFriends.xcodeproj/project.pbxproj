@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		17062CD428538C6300AA7828 /* SetUpProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17062CD328538C6300AA7828 /* SetUpProfileViewController.swift */; };
+		17062CD6285391C800AA7828 /* AddPhotoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17062CD5285391C800AA7828 /* AddPhotoView.swift */; };
+		17062CD82853C79700AA7828 /* UISegmentControll+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17062CD72853C79700AA7828 /* UISegmentControll+Extension.swift */; };
 		17A47802284FA1640036473F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17A47801284FA1640036473F /* AppDelegate.swift */; };
 		17A47804284FA1640036473F /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17A47803284FA1640036473F /* SceneDelegate.swift */; };
 		17A47806284FA1640036473F /* AuthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17A47805284FA1640036473F /* AuthViewController.swift */; };
@@ -26,6 +29,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		17062CD328538C6300AA7828 /* SetUpProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetUpProfileViewController.swift; sourceTree = "<group>"; };
+		17062CD5285391C800AA7828 /* AddPhotoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPhotoView.swift; sourceTree = "<group>"; };
+		17062CD72853C79700AA7828 /* UISegmentControll+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UISegmentControll+Extension.swift"; sourceTree = "<group>"; };
 		17A477FE284FA1640036473F /* HiFriends.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HiFriends.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		17A47801284FA1640036473F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		17A47803284FA1640036473F /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -81,6 +87,7 @@
 				17A47805284FA1640036473F /* AuthViewController.swift */,
 				17EA907228522FA0003B0B48 /* SignUpViewController.swift */,
 				17EA907928528A25003B0B48 /* LogInViewController.swift */,
+				17062CD328538C6300AA7828 /* SetUpProfileViewController.swift */,
 				17EA907B2852B14C003B0B48 /* Constants.swift */,
 				17A4781A2850D6E60036473F /* Extensions */,
 				17A4780A284FA1640036473F /* Assets.xcassets */,
@@ -94,6 +101,7 @@
 			isa = PBXGroup;
 			children = (
 				17A478292850F0E70036473F /* ButtonFormView.swift */,
+				17062CD5285391C800AA7828 /* AddPhotoView.swift */,
 				17EA9077285235BF003B0B48 /* OneLineTextField.swift */,
 				17EA90742852351B003B0B48 /* UIKit */,
 			);
@@ -109,6 +117,7 @@
 				17A4781D2850E4FF0036473F /* UILabel+Extension.swift */,
 				17A4781F2850E7520036473F /* UIImageView+Extension.swift */,
 				17EA906E28515EC3003B0B48 /* UIStackView+Extension.swift */,
+				17062CD72853C79700AA7828 /* UISegmentControll+Extension.swift */,
 			);
 			path = UIKit;
 			sourceTree = "<group>";
@@ -185,14 +194,17 @@
 			files = (
 				17EA9078285235BF003B0B48 /* OneLineTextField.swift in Sources */,
 				17EA907328522FA0003B0B48 /* SignUpViewController.swift in Sources */,
+				17062CD82853C79700AA7828 /* UISegmentControll+Extension.swift in Sources */,
 				17A47806284FA1640036473F /* AuthViewController.swift in Sources */,
 				17A478172850CD9B0036473F /* UIButton+Extension.swift in Sources */,
 				17A478202850E7520036473F /* UIImageView+Extension.swift in Sources */,
 				17EA906F28515EC3003B0B48 /* UIStackView+Extension.swift in Sources */,
+				17062CD428538C6300AA7828 /* SetUpProfileViewController.swift in Sources */,
 				17EA907A28528A25003B0B48 /* LogInViewController.swift in Sources */,
 				17A4782A2850F0E70036473F /* ButtonFormView.swift in Sources */,
 				17A47802284FA1640036473F /* AppDelegate.swift in Sources */,
 				17A4781E2850E4FF0036473F /* UILabel+Extension.swift in Sources */,
+				17062CD6285391C800AA7828 /* AddPhotoView.swift in Sources */,
 				17A4781C2850D7040036473F /* UIColor+Extension.swift in Sources */,
 				17EA907C2852B14C003B0B48 /* Constants.swift in Sources */,
 				17A478192850D5FB0036473F /* UIFont+Extension.swift in Sources */,
