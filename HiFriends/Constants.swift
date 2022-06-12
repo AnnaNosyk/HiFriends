@@ -23,4 +23,6 @@ class Constants {
     let confirmPassword = "Confirm password"
     let needAnAccountStr = "Need an account?"
     let signUpStr = "Sign up"
+    let setUpStr = "Set up profile"
+    
 }
