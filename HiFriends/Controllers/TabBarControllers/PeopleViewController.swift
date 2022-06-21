@@ -30,7 +30,7 @@ class PeopleViewController: UIViewController {
         setupSearchBar()
         setupCollectionView()
         setupDataSource()
-        reloadData()
+        reloadData(with: nil)
     }
     
     private func setupSearchBar() {
@@ -56,13 +56,15 @@ class PeopleViewController: UIViewController {
     }
     
     // data for items
-    private func reloadData() {
+    private func reloadData(with searchText: String?) {
+        let filtered = users.filter { user in
+            user.contains(filter: searchText)
+        }
         var snapshot = NSDiffableDataSourceSnapshot<Section, Users>()
         snapshot.appendSections([.users])
-        snapshot.appendItems( users, toSection: .users)
+        snapshot.appendItems( filtered, toSection: .users)
        
         dataSource?.apply(snapshot, animatingDifferences: true)
-        
     }
     
 }
@@ -109,9 +111,9 @@ extension PeopleViewController {
             switch section {
             
             case .users:
-                print("1")
+                return self.setupUserCell()
             }
-            return self.setupUserCell()
+           
         }
         // for spacing between sections
         let configuration = UICollectionViewCompositionalLayoutConfiguration()
@@ -158,7 +160,7 @@ extension PeopleViewController {
 extension PeopleViewController : UISearchBarDelegate {
     
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
-        print(" ")
+        reloadData(with: searchText)
     }
 }
 //MARK: - SwiftUI
