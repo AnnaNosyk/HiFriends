@@ -12,15 +12,16 @@ class MainTabBar: UITabBarController {
     override func viewDidLoad() {
         super.viewDidLoad()
         let listVC = ListViewController()
-        let peoleVc = PeoleViewController()
+        let peoleVc = PeopleViewController()
         tabBar.tintColor = .backGroundButton()
         let boldConfig = UIImage.SymbolConfiguration(weight: .medium)
         let peopleImage = UIImage(systemName: "person.3", withConfiguration: boldConfig)!
         let chatImage = UIImage(systemName: "text.bubble", withConfiguration: boldConfig)!
         
         viewControllers = [
-            setupNavigationController(rootVC: listVC, title: "Chats", image: chatImage),
-            setupNavigationController(rootVC: peoleVc, title: "People", image: peopleImage)
+            setupNavigationController(rootVC: peoleVc, title: "People", image: peopleImage),
+            setupNavigationController(rootVC: listVC, title: "Chats", image: chatImage)
+           
         ]
 
     }

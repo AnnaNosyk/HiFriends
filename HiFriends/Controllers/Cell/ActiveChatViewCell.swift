@@ -8,6 +8,8 @@
 import UIKit
 
 class ActiveChatViewCell: UICollectionViewCell, ConfiguringCell {
+
+    
     
     static var idCell: String = "ActiveChatViewCell"
     
@@ -16,8 +18,6 @@ class ActiveChatViewCell: UICollectionViewCell, ConfiguringCell {
     let lastMessage = UILabel(title: "Hello, where are you?", textColor: .textDescriptionColor(), font: .helvetica18())
     let gradient = GradientView(from: .top, to: .bottom, startColor: .startGradientColor(), endColor: .endGradienColor())
 
-    
-    
     override init(frame: CGRect) {
         super.init(frame: frame)
         setupConstraints()
@@ -26,17 +26,17 @@ class ActiveChatViewCell: UICollectionViewCell, ConfiguringCell {
         self.clipsToBounds = true
     }
     
-    func configure(with value: HiChat) {
-        chatImage.image = UIImage(named: value.userImageString)
-        chatName.text = value.username
-        lastMessage.text = value.lastMessage
+    func configure<U>(with value: U) where U : Hashable {
+        guard let chats: HiChat = value as? HiChat else {return}
+        chatImage.image = UIImage(named: chats.userImageString)
+        chatName.text = chats.username
+        lastMessage.text = chats.lastMessage
     }
     
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-    
 }
 
 // MARK: - Setup constraints

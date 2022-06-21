@@ -1,5 +1,5 @@
 //
-//  ListViewController.swift
+//  PeoleViewController.swift
 //  HiFriends
 //
 //  Created by Anna Nosyk on 13/06/2022.
@@ -7,40 +7,32 @@
 
 import UIKit
 
-class ListViewController: UIViewController {
-    
-    // demo list
-    let activeChats = Bundle.main.decode([HiChat].self, from: "activeChats.json")
-    let waitingChats = Bundle.main.decode([HiChat].self, from: "waitingChats.json")
-    
+class PeopleViewController: UIViewController {
+    //demo users
+    let users = Bundle.main.decode([Users].self, from: "users.json")
     var collectionView: UICollectionView!
+    var dataSource: UICollectionViewDiffableDataSource<Section, Users>!
     
-    // for different sections in collectionView
+    // for sections in collectionView
     enum Section: Int, CaseIterable {
-    case  waitingChats , activeChats
-        func description()-> String {
+    case  users
+        func description(usersCount: Int)-> String {
             switch self {
-                
-            case .waitingChats:
-                return "Waiting chats"
-            case .activeChats:
-                return "Active chats"
+            case .users:
+                return "\(usersCount) online"
             }
         }
     }
-    
-    var dataSource: UICollectionViewDiffableDataSource<Section, HiChat>?
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = .white 
-        setupCollectionView()
+        view.backgroundColor = .white
         setupSearchBar()
+        setupCollectionView()
         setupDataSource()
         reloadData()
     }
     
-    // create searchBar
     private func setupSearchBar() {
         navigationController?.navigationBar.barTintColor = .mainColor()
         navigationController?.navigationBar.shadowImage = UIImage()
@@ -60,47 +52,43 @@ class ListViewController: UIViewController {
         view.addSubview(collectionView)
         //for headers
         collectionView.register(SectionHeader.self, forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: SectionHeader.reuseId)
-        collectionView.register(ActiveChatViewCell.self, forCellWithReuseIdentifier: ActiveChatViewCell.idCell)
-        collectionView.register(WaitingChatViewCell.self, forCellWithReuseIdentifier: WaitingChatViewCell.idCell)
+        collectionView.register(UserViewCell.self, forCellWithReuseIdentifier: UserViewCell.idCell)
     }
     
     // data for items
     private func reloadData() {
-        var snapshot = NSDiffableDataSourceSnapshot<Section, HiChat>()
-        snapshot.appendSections([.waitingChats, .activeChats])
-        snapshot.appendItems(waitingChats, toSection: .waitingChats)
-        snapshot.appendItems(activeChats, toSection: .activeChats)
+        var snapshot = NSDiffableDataSourceSnapshot<Section, Users>()
+        snapshot.appendSections([.users])
+        snapshot.appendItems( users, toSection: .users)
+       
         dataSource?.apply(snapshot, animatingDifferences: true)
         
     }
-
+    
 }
-
 //MARK: - Data Source
-
-extension ListViewController {
+extension PeopleViewController {
     // dataSource for cells
     private func setupDataSource() {
-        dataSource = UICollectionViewDiffableDataSource<Section, HiChat>(collectionView: collectionView, cellProvider: { (collectionView, indexPath, chat) -> UICollectionViewCell? in
+        dataSource = UICollectionViewDiffableDataSource<Section, Users>(collectionView: collectionView, cellProvider: { (collectionView, indexPath, user) -> UICollectionViewCell? in
             guard let section = Section(rawValue: indexPath.section) else {
                 fatalError("Unknown section")
             }
-            
             switch section {
-                
-            case .activeChats:
-                return self.configure(collectionView: collectionView, cellType: ActiveChatViewCell.self, with: chat, for: indexPath)
-            case .waitingChats:
-                return self.configure(collectionView: collectionView, cellType: WaitingChatViewCell.self, with: chat, for: indexPath)
+     
+            case .users:
+                return self.configure(collectionView: collectionView, cellType: UserViewCell.self, with: user, for: indexPath)
             }
         })
         
         dataSource?.supplementaryViewProvider = {
             collectionView, kind, IndexPath in
             guard let sectionHeader = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: SectionHeader.reuseId, for: IndexPath) as? SectionHeader else {fatalError("Can't create new section")}
-            
+
             guard let section = Section(rawValue: IndexPath.section) else {fatalError("Unknown section")}
-            sectionHeader.configure(text: section.description(),
+            //how many items
+            let items = self.dataSource.snapshot().itemIdentifiers(inSection: .users)
+            sectionHeader.configure(text: section.description(usersCount: items.count),
                                     font: .helvetica20()!,
                                     textColr:.textDescriptionColor())
                     return sectionHeader
@@ -108,9 +96,10 @@ extension ListViewController {
     }
 }
 
+
 // MARK: - Seup Layout
 
-extension ListViewController {
+extension PeopleViewController {
     // create cells with UICollectionViewCompositionalLayout
     private func createCell()-> UICollectionViewLayout {
         let layout = UICollectionViewCompositionalLayout { sectionIndex, layoutEnvironment in
@@ -118,11 +107,11 @@ extension ListViewController {
                 fatalError("Unknown section")
             }
             switch section {
-            case .activeChats:
-                return self.setupActiveChatsCell()
-            case .waitingChats:
-                return self.setupWaitingChatsCell()
+            
+            case .users:
+                print("1")
             }
+            return self.setupUserCell()
         }
         // for spacing between sections
         let configuration = UICollectionViewCompositionalLayoutConfiguration()
@@ -131,43 +120,25 @@ extension ListViewController {
         return layout
     }
     
+    
     //CompositionalLayout for active chats
     
-    private func setupActiveChatsCell() -> NSCollectionLayoutSection {
+    private func setupUserCell() -> NSCollectionLayoutSection {
+        let spasing = CGFloat(15)
         let itemSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1), heightDimension: .fractionalHeight(1))
         let item = NSCollectionLayoutItem(layoutSize: itemSize)
-        let groupSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1), heightDimension: .absolute(78))
-        let group = NSCollectionLayoutGroup.vertical(layoutSize: groupSize, subitems: [item])
-       
+        let groupSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1), heightDimension: .fractionalWidth(0.6))
+        let group = NSCollectionLayoutGroup.horizontal(layoutSize: groupSize, subitem: item, count: 2)
+        // spasing for items
+        group.interItemSpacing = .fixed(spasing)
         let section = NSCollectionLayoutSection(group: group)
         //spasing for group
-        section.interGroupSpacing = 8
+        section.interGroupSpacing = spasing
         // for spasing for section
-        section.contentInsets = NSDirectionalEdgeInsets.init(top: 16, leading: 20, bottom: 0, trailing: 20)
+        section.contentInsets = NSDirectionalEdgeInsets.init(top: 16, leading: 15, bottom: 0, trailing: 15)
         
         let sectionHeader = setupSectionHeader()
-        section.boundarySupplementaryItems = [sectionHeader]
-        return section
-    }
-    
-    //CompositionalLayout for waiting chats
-    private func setupWaitingChatsCell() -> NSCollectionLayoutSection {
-        let itemSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1), heightDimension: .fractionalHeight(1))
-        let item = NSCollectionLayoutItem(layoutSize: itemSize)
-        let groupSize = NSCollectionLayoutSize(widthDimension: .absolute(88), heightDimension: .absolute(88))
-        let group = NSCollectionLayoutGroup.horizontal(layoutSize: groupSize, subitems: [item])
-        
-        let section =  NSCollectionLayoutSection(group: group)
-        //spasing for group
-        section.interGroupSpacing = 16
-        // for spasing for section
-        section.contentInsets = NSDirectionalEdgeInsets.init(top: 16, leading: 20, bottom: 0, trailing: 20)
-        // for scroling
-        section.orthogonalScrollingBehavior = .continuous
-        
-        let sectionHeader = setupSectionHeader()
-        section.boundarySupplementaryItems = [sectionHeader]
-        
+       section.boundarySupplementaryItems = [sectionHeader]
         return section
     }
     
@@ -178,28 +149,25 @@ extension ListViewController {
                                                                         alignment: .top)
         return sectionHeader
     }
+
+    
+    
     
 }
 
-
-// MARK: - UISearchBarDelegate
-extension ListViewController : UISearchBarDelegate {
+extension PeopleViewController : UISearchBarDelegate {
     
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
-        print("hhhhhh ")
+        print(" ")
     }
 }
-
-
-
 //MARK: - SwiftUI
 import SwiftUI
 
-struct ListVCProvider : PreviewProvider {
+struct PeopleVCProvider : PreviewProvider {
     static var previews: some View {
         ContainerView().edgesIgnoringSafeArea(.all)
     }
-    
     
     struct ContainerView : UIViewControllerRepresentable {
         
@@ -209,7 +177,6 @@ struct ListVCProvider : PreviewProvider {
         }
         
         func updateUIViewController(_ uiViewController: UIViewControllerType, context: Context) {
-            
         }
     }
 }

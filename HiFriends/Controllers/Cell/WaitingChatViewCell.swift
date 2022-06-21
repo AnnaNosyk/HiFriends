@@ -8,10 +8,7 @@
 import UIKit
 
 class WaitingChatViewCell: UICollectionViewCell, ConfiguringCell {
-    
-    
-    
-    
+   
     static var idCell: String = "WaitingChatViewCell"
     
     let chatImage = UIImageView()
@@ -25,8 +22,13 @@ class WaitingChatViewCell: UICollectionViewCell, ConfiguringCell {
     }
     
     func configure(with value: HiChat) {
-        chatImage.image = UIImage(named: value.userImageString)
+       
     }
+    func configure<U>(with value: U) where U : Hashable {
+        guard let chats: HiChat = value as? HiChat else {return}
+        chatImage.image = UIImage(named: chats.userImageString)
+    }
+    
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")

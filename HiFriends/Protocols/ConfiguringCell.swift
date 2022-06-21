@@ -9,5 +9,5 @@ import UIKit
 
 protocol ConfiguringCell {
     static var idCell: String { get }
-    func configure(with value: HiChat)
+    func configure<U: Hashable>(with value: U)
 }
