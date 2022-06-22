@@ -40,6 +40,8 @@
 		17E6C8EE2862362A00DBAE43 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17E6C8ED2862362A00DBAE43 /* ProfileViewController.swift */; };
 		17E6C8F02863489300DBAE43 /* CustomTexfield.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17E6C8EF2863489300DBAE43 /* CustomTexfield.swift */; };
 		17E6C8F228634F7A00DBAE43 /* UIView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17E6C8F128634F7A00DBAE43 /* UIView+Extension.swift */; };
+		17E6C8F42863667F00DBAE43 /* ChatRequestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17E6C8F32863667F00DBAE43 /* ChatRequestViewController.swift */; };
+		17E6C8F62863C59400DBAE43 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 17E6C8F52863C59400DBAE43 /* GoogleService-Info.plist */; };
 		17EA906F28515EC3003B0B48 /* UIStackView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17EA906E28515EC3003B0B48 /* UIStackView+Extension.swift */; };
 		17EA907328522FA0003B0B48 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17EA907228522FA0003B0B48 /* SignUpViewController.swift */; };
 		17EA9078285235BF003B0B48 /* OneLineTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17EA9077285235BF003B0B48 /* OneLineTextField.swift */; };
@@ -83,6 +85,8 @@
 		17E6C8ED2862362A00DBAE43 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		17E6C8EF2863489300DBAE43 /* CustomTexfield.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTexfield.swift; sourceTree = "<group>"; };
 		17E6C8F128634F7A00DBAE43 /* UIView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extension.swift"; sourceTree = "<group>"; };
+		17E6C8F32863667F00DBAE43 /* ChatRequestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatRequestViewController.swift; sourceTree = "<group>"; };
+		17E6C8F52863C59400DBAE43 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		17EA906E28515EC3003B0B48 /* UIStackView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIStackView+Extension.swift"; sourceTree = "<group>"; };
 		17EA907228522FA0003B0B48 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		17EA9077285235BF003B0B48 /* OneLineTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OneLineTextField.swift; sourceTree = "<group>"; };
@@ -132,6 +136,7 @@
 				17A4781A2850D6E60036473F /* Extensions */,
 				17A4780A284FA1640036473F /* Assets.xcassets */,
 				17A4780C284FA1640036473F /* LaunchScreen.storyboard */,
+				17E6C8F52863C59400DBAE43 /* GoogleService-Info.plist */,
 				17A4780F284FA1640036473F /* Info.plist */,
 			);
 			path = HiFriends;
@@ -191,6 +196,7 @@
 				17A4BBAE285785F00042F400 /* ListViewController.swift */,
 				17A4BBB0285786390042F400 /* PeopleViewController.swift */,
 				17E6C8ED2862362A00DBAE43 /* ProfileViewController.swift */,
+				17E6C8F32863667F00DBAE43 /* ChatRequestViewController.swift */,
 			);
 			path = TabBarControllers;
 			sourceTree = "<group>";
@@ -298,6 +304,7 @@
 				17E6C8D0285BA41A00DBAE43 /* activeChats.json in Resources */,
 				17A4780B284FA1640036473F /* Assets.xcassets in Resources */,
 				17E6C8D1285BA41A00DBAE43 /* waitingChats.json in Resources */,
+				17E6C8F62863C59400DBAE43 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -334,6 +341,7 @@
 				17E6C8E82860A39500DBAE43 /* Users.swift in Sources */,
 				17A4781E2850E4FF0036473F /* UILabel+Extension.swift in Sources */,
 				17062CD6285391C800AA7828 /* AddPhotoView.swift in Sources */,
+				17E6C8F42863667F00DBAE43 /* ChatRequestViewController.swift in Sources */,
 				17E6C8EA28620A0800DBAE43 /* UserViewCell.swift in Sources */,
 				17A4781C2850D7040036473F /* UIColor+Extension.swift in Sources */,
 				17EA907C2852B14C003B0B48 /* Constants.swift in Sources */,

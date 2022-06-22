@@ -7,10 +7,11 @@
 
 import UIKit
 
-class CustomTexfield: UITextField {
+class CustomTexfield: UITextField, UITextFieldDelegate {
     override init(frame: CGRect) {
         super.init(frame: frame)
         customizeView()
+        self.delegate = self
     }
     
     private func customizeView() {
@@ -37,7 +38,6 @@ class CustomTexfield: UITextField {
     }
 
     // from wich space start text write
-    
     override func textRect(forBounds bounds: CGRect) -> CGRect {
         return bounds.insetBy(dx: 36, dy: 0)
     }
@@ -60,6 +60,10 @@ class CustomTexfield: UITextField {
         var cgRect = super.rightViewRect(forBounds: bounds)
         cgRect.origin.x -= 12
         return cgRect
+    }
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        self.resignFirstResponder()
     }
     
     required init?(coder: NSCoder) {
