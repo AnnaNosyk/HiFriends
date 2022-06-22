@@ -99,7 +99,7 @@ extension PeopleViewController {
 }
 
 
-// MARK: - Seup Layout
+// MARK: - Setup Layout
 
 extension PeopleViewController {
     // create cells with UICollectionViewCompositionalLayout

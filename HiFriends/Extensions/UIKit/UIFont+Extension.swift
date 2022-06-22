@@ -9,6 +9,9 @@ import Foundation
 import UIKit
 
 extension UIFont {
+    static func helvetica16() -> UIFont? {
+        return UIFont.init(name: "Helvetica", size: 16.0)
+    }
     
     static func helvetica18() -> UIFont? {
         return UIFont.init(name: "Helvetica", size: 18.0)

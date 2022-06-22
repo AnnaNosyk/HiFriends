@@ -37,6 +37,9 @@
 		17E6C8E82860A39500DBAE43 /* Users.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17E6C8E72860A39500DBAE43 /* Users.swift */; };
 		17E6C8EA28620A0800DBAE43 /* UserViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17E6C8E928620A0800DBAE43 /* UserViewCell.swift */; };
 		17E6C8EC2862123300DBAE43 /* UIViewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17E6C8EB2862123300DBAE43 /* UIViewController+Extension.swift */; };
+		17E6C8EE2862362A00DBAE43 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17E6C8ED2862362A00DBAE43 /* ProfileViewController.swift */; };
+		17E6C8F02863489300DBAE43 /* CustomTexfield.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17E6C8EF2863489300DBAE43 /* CustomTexfield.swift */; };
+		17E6C8F228634F7A00DBAE43 /* UIView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17E6C8F128634F7A00DBAE43 /* UIView+Extension.swift */; };
 		17EA906F28515EC3003B0B48 /* UIStackView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17EA906E28515EC3003B0B48 /* UIStackView+Extension.swift */; };
 		17EA907328522FA0003B0B48 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17EA907228522FA0003B0B48 /* SignUpViewController.swift */; };
 		17EA9078285235BF003B0B48 /* OneLineTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17EA9077285235BF003B0B48 /* OneLineTextField.swift */; };
@@ -77,6 +80,9 @@
 		17E6C8E72860A39500DBAE43 /* Users.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Users.swift; sourceTree = "<group>"; };
 		17E6C8E928620A0800DBAE43 /* UserViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserViewCell.swift; sourceTree = "<group>"; };
 		17E6C8EB2862123300DBAE43 /* UIViewController+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extension.swift"; sourceTree = "<group>"; };
+		17E6C8ED2862362A00DBAE43 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		17E6C8EF2863489300DBAE43 /* CustomTexfield.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTexfield.swift; sourceTree = "<group>"; };
+		17E6C8F128634F7A00DBAE43 /* UIView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extension.swift"; sourceTree = "<group>"; };
 		17EA906E28515EC3003B0B48 /* UIStackView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIStackView+Extension.swift"; sourceTree = "<group>"; };
 		17EA907228522FA0003B0B48 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		17EA9077285235BF003B0B48 /* OneLineTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OneLineTextField.swift; sourceTree = "<group>"; };
@@ -139,8 +145,9 @@
 				17EA9077285235BF003B0B48 /* OneLineTextField.swift */,
 				17E6C8D2285BA4CA00DBAE43 /* Bundle.swift */,
 				17E6C8EB2862123300DBAE43 /* UIViewController+Extension.swift */,
-				17EA90742852351B003B0B48 /* UIKit */,
+				17E6C8EF2863489300DBAE43 /* CustomTexfield.swift */,
 				17E6C8D7285CC4FE00DBAE43 /* GradientView.swift */,
+				17EA90742852351B003B0B48 /* UIKit */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -183,6 +190,7 @@
 				17A4BBAC285785B00042F400 /* MainTabBar.swift */,
 				17A4BBAE285785F00042F400 /* ListViewController.swift */,
 				17A4BBB0285786390042F400 /* PeopleViewController.swift */,
+				17E6C8ED2862362A00DBAE43 /* ProfileViewController.swift */,
 			);
 			path = TabBarControllers;
 			sourceTree = "<group>";
@@ -216,6 +224,7 @@
 			isa = PBXGroup;
 			children = (
 				17A478162850CD9B0036473F /* UIButton+Extension.swift */,
+				17E6C8F128634F7A00DBAE43 /* UIView+Extension.swift */,
 				17A478182850D5FB0036473F /* UIFont+Extension.swift */,
 				17A4781B2850D7040036473F /* UIColor+Extension.swift */,
 				17A4781D2850E4FF0036473F /* UILabel+Extension.swift */,
@@ -299,6 +308,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				17E6C8F228634F7A00DBAE43 /* UIView+Extension.swift in Sources */,
 				17A4BBAD285785B00042F400 /* MainTabBar.swift in Sources */,
 				17E6C8D8285CC4FE00DBAE43 /* GradientView.swift in Sources */,
 				17E6C8E3285DF9FA00DBAE43 /* HiChat.swift in Sources */,
@@ -311,6 +321,7 @@
 				17A478202850E7520036473F /* UIImageView+Extension.swift in Sources */,
 				17EA906F28515EC3003B0B48 /* UIStackView+Extension.swift in Sources */,
 				17E6C8DC285CD1AC00DBAE43 /* WaitingChatViewCell.swift in Sources */,
+				17E6C8EE2862362A00DBAE43 /* ProfileViewController.swift in Sources */,
 				17A4BBAF285785F00042F400 /* ListViewController.swift in Sources */,
 				17E6C8E1285DEF4600DBAE43 /* SectionHeader.swift in Sources */,
 				17E6C8D6285BC6ED00DBAE43 /* ActiveChatViewCell.swift in Sources */,
@@ -329,6 +340,7 @@
 				17A478192850D5FB0036473F /* UIFont+Extension.swift in Sources */,
 				17E6C8DF285CD36200DBAE43 /* ConfiguringCell.swift in Sources */,
 				17A47804284FA1640036473F /* SceneDelegate.swift in Sources */,
+				17E6C8F02863489300DBAE43 /* CustomTexfield.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
