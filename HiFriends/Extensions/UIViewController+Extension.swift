@@ -13,5 +13,14 @@ extension UIViewController {
         cell.configure(with: value)
         return cell
     }
+    
+    func showAlert(with title: String, and message: String, complition: @escaping()->Void = {}) {
+        let alertController = UIAlertController(title: title, message: message, preferredStyle: .alert)
+        let okAction = UIAlertAction(title: "OK", style: .default) { _ in
+            complition()
+        }
+        alertController.addAction(okAction)
+        present(alertController, animated: true, completion: nil)
+    }
 
 }

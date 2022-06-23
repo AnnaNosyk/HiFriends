@@ -9,7 +9,6 @@ import UIKit
 
 class AuthViewController: UIViewController {
     
-    
     let emailButton = UIButton(title: Constants().emailStr , titleColor: .white, backgroundColor:.backGroundButton() )
     
     let loginButton = UIButton(title: Constants().loginStr, titleColor: .redButton(), backgroundColor: .white, isShadow: true)
@@ -19,17 +18,37 @@ class AuthViewController: UIViewController {
     let emailLabel = UILabel(title: Constants().signUpWithStr, textColor: .black, font: .helvetica18())
     let googleLabel = UILabel(title: Constants().getStartetWithStr, textColor: .black, font: .helvetica18())
     let withUsLabel = UILabel(title: Constants().alreadyWithUsStr, textColor: .black, font: .helvetica18())
-    
     let logoImage = UIImageView(image: UIImage(named: "darkMode"), contentMode: .scaleAspectFill)
+    
+    let signUpVc = SignUpViewController()
+    let loginVc = LogInViewController()
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .white
         googleButton.customizeGoogleButton()
         setupConstraints()
+        targetsForButtons()
+        signUpVc.delegate = self
+        loginVc.delegate = self
     }
     
+    func targetsForButtons() {
+        emailButton.addTarget(self, action: #selector(emailTapButton), for: .touchUpInside)
+       // googleButton.addTarget(self, action: #selector(googleTapButton), for: .touchUpInside)
+        loginButton.addTarget(self, action: #selector(loginTapButton), for: .touchUpInside)
+    
+    }
   
+    
+    @objc private func emailTapButton() {
+        present(signUpVc, animated: true, completion: nil)
+    }
+    @objc private func loginTapButton() {
+        present(loginVc, animated: true, completion: nil)
+    }
+
 }
 
 //MARK: - Constraints setup
@@ -56,6 +75,18 @@ extension AuthViewController {
             stackView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 40),
             stackView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -40)
         ])
+    }
+}
+//MARK: - AuthNavigationDelegate
+
+// go to view controllers from another VC
+extension AuthViewController: AuthNavigationDelegate {
+    func toLoginVc() {
+        present(loginVc, animated: true, completion: nil)
+    }
+    
+    func tosignUpVc() {
+        present(signUpVc, animated: true, completion: nil)
     }
 }
 

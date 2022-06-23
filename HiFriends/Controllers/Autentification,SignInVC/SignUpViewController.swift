@@ -16,19 +16,57 @@ class SignUpViewController: UIViewController {
     let withUsLabel = UILabel(title: Constants().alreadyWithUsStr, textColor: .black, font: .helvetica18())
     
     let signUPButton = UIButton(title: Constants().signUpStr, titleColor: .white, backgroundColor: .backGroundButton(), cornerRadius: 10)
-    let loginButton = UIButton(title: Constants(    ).loginStr, titleColor: .redButton(), backgroundColor: .white, cornerRadius: 0)
+    let loginButton = UIButton(title: Constants().loginStr, titleColor: .redButton(), backgroundColor: .white, cornerRadius: 0)
     
     let emailTextField = OneLineTextField(font: .helvetica20())
     let passwordTextField = OneLineTextField(font: .helvetica20())
     let confirmPasswordTextField = OneLineTextField(font: .helvetica20())
+    let setUpProfileVc = SetUpProfileViewController()
+    
+    weak var delegate: AuthNavigationDelegate?
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        emailTextField.delegate = self
+        passwordTextField.delegate = self
+        confirmPasswordTextField.delegate = self
         view.backgroundColor = .white
         setupConstraints()
+        signUPButton.addTarget(self, action: #selector(signUpTapButton), for: .touchUpInside)
+        loginButton.addTarget(self, action: #selector(loginTapButton), for: .touchUpInside)
         
     }
+    
+    
+    
+    @objc private func signUpTapButton() {
+        print(#function)
+        AuthService.shared.registration(email: emailTextField.text, password: passwordTextField.text, confPassword: confirmPasswordTextField.text) { result in
+            switch result {
+            case .success(let user):
+                self.showAlert(with: "Success", and: "login is completed") { [self] in
+                    present(setUpProfileVc, animated: true, completion: nil)
+                }
+            case .failure(let error):
+                self.showAlert(with: "Error", and: error.localizedDescription)
+            }
+        }
+    }
+    
+    // go to loginVc
+    @objc private func loginTapButton() {
+        self.dismiss(animated: true) {
+            self.delegate?.toLoginVc()
+        }
+    }
 
+}
+
+extension SignUpViewController: UITextFieldDelegate {
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        self.view.endEditing(true)
+    }
 }
 
 extension SignUpViewController {
