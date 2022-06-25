@@ -6,12 +6,14 @@
 //
 
 import UIKit
+import FirebaseAuth
 
 class PeopleViewController: UIViewController {
     //demo users
-    let users = Bundle.main.decode([Users].self, from: "users.json")
+   // let users = Bundle.main.decode([HiUsers].self, from: "users.json")
+    let users = [HiUsers]()
     var collectionView: UICollectionView!
-    var dataSource: UICollectionViewDiffableDataSource<Section, Users>!
+    var dataSource: UICollectionViewDiffableDataSource<Section, HiUsers>!
     
     // for sections in collectionView
     enum Section: Int, CaseIterable {
@@ -23,6 +25,18 @@ class PeopleViewController: UIViewController {
             }
         }
     }
+    
+    private let currentUser: HiUsers
+    
+    init(currentUser: HiUsers) {
+        self.currentUser = currentUser
+        super.init(nibName: nil, bundle: nil)
+        title = currentUser.username
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -31,6 +45,24 @@ class PeopleViewController: UIViewController {
         setupCollectionView()
         setupDataSource()
         reloadData(with: nil)
+        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Log out", style: .plain, target: self, action: #selector(logOut))
+        
+    }
+    
+    @objc private func logOut() {
+        let alert = UIAlertController(title: nil, message: "Are you sure you want to sign out?", preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
+        alert.addAction(UIAlertAction(title: "Sign Out", style: .destructive, handler: { _ in
+            do {
+                try Auth.auth().signOut()
+                UIApplication.shared.keyWindow?.rootViewController = AuthViewController()
+            } catch {
+                print("Error sign out - \(error.localizedDescription)")
+            }
+        }))
+        present(alert, animated: true, completion: nil)
+        
+        
     }
     
     private func setupSearchBar() {
@@ -60,7 +92,7 @@ class PeopleViewController: UIViewController {
         let filtered = users.filter { user in
             user.contains(filter: searchText)
         }
-        var snapshot = NSDiffableDataSourceSnapshot<Section, Users>()
+        var snapshot = NSDiffableDataSourceSnapshot<Section, HiUsers>()
         snapshot.appendSections([.users])
         snapshot.appendItems( filtered, toSection: .users)
        
@@ -72,7 +104,7 @@ class PeopleViewController: UIViewController {
 extension PeopleViewController {
     // dataSource for cells
     private func setupDataSource() {
-        dataSource = UICollectionViewDiffableDataSource<Section, Users>(collectionView: collectionView, cellProvider: { (collectionView, indexPath, user) -> UICollectionViewCell? in
+        dataSource = UICollectionViewDiffableDataSource<Section, HiUsers>(collectionView: collectionView, cellProvider: { (collectionView, indexPath, user) -> UICollectionViewCell? in
             guard let section = Section(rawValue: indexPath.section) else {
                 fatalError("Unknown section")
             }

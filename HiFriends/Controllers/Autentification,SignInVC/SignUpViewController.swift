@@ -21,7 +21,7 @@ class SignUpViewController: UIViewController {
     let emailTextField = OneLineTextField(font: .helvetica20())
     let passwordTextField = OneLineTextField(font: .helvetica20())
     let confirmPasswordTextField = OneLineTextField(font: .helvetica20())
-    let setUpProfileVc = SetUpProfileViewController()
+   // let setUpProfileVc = SetUpProfileViewController(currentUser: <#User#>)
     
     weak var delegate: AuthNavigationDelegate?
 
@@ -45,7 +45,7 @@ class SignUpViewController: UIViewController {
             switch result {
             case .success(let user):
                 self.showAlert(with: "Success", and: "login is completed") { [self] in
-                    present(setUpProfileVc, animated: true, completion: nil)
+                    present(SetUpProfileViewController(currentUser: user), animated: true, completion: nil)
                 }
             case .failure(let error):
                 self.showAlert(with: "Error", and: error.localizedDescription)

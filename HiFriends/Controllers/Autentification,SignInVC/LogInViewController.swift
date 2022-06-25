@@ -48,6 +48,17 @@ class LogInViewController: UIViewController {
             switch result {
             case .success(let user):
                 self.showAlert(with: "Success", and: "login is success")
+                //checking - user make his set up profile or no
+                FirestoreService.shared.getUserData(user: user) { result in
+                    switch result {
+                    case .success(let hiUser):
+                        let mainTabBar = MainTabBar(currentUser: hiUser)
+                        mainTabBar.modalPresentationStyle = .fullScreen
+                        self.present(mainTabBar, animated: true, completion: nil)
+                    case .failure(let error):
+                        self.present(SetUpProfileViewController(currentUser: user), animated: true, completion: nil)
+                    }
+                }
             case .failure(let error):
                 self.showAlert(with: "Error", and: error.localizedDescription) 
             }

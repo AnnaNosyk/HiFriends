@@ -33,7 +33,7 @@ class UserViewCell: UICollectionViewCell, ConfiguringCell {
         self.containerView.clipsToBounds = true
     }
     func configure<U>(with value: U) where U : Hashable {
-        guard let user: Users = value as? Users else {return}
+        guard let user: HiUsers = value as? HiUsers else {return}
         userImage.image = UIImage(named: user.avatarStringURL)
         userName.text = user.username
     }
